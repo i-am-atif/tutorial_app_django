@@ -1,0 +1,21 @@
+<!-- THIS CODE IS USED TO DECIDE THE CONTENT AND PRESENT OUR HOMEPAGE -->
+
+{% extends "main/header.html" %}
+{% block content %}
+  <div class="row">
+  	{% for tut in tutorials %}
+	    <div class="col s12 m6">
+	      <div class="card green-grey darken-1">
+	        <div class="card-content white-text">
+	          <span class="card-title">{{tut.tutorial_title}}</span>
+	          <p style="font-size:90%">{{tut.tutorial_published}}</p>
+	          <p>{{tut.tutorial_content|safe}}</p>
+	        </div>
+	        <div class="card-action">
+	          <a href="#">Visit</a>
+	        </div>
+	      </div>
+	    </div>
+    {% endfor %}
+  </div>
+{% endblock %}
